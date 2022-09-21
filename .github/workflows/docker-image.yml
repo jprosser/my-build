@@ -2,8 +2,8 @@ name: ci
 
 on:
   push:
-    branches:
-      - 'main'
+    push:
+      - 'v*'
 
 env:
   REGISTRY: ghcr.io
