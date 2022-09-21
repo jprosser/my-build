@@ -1,7 +1,7 @@
 FROM centos:centos7
 
-LABEL vendor="UW-IT" \
-      authors="Justin Prosser"
+LABEL org.opencontainers.image.vendor="UW-IT" \
+      org.opencontainers.image.authors="Justin Prosser"
 
 RUN echo "hello centos (amd64, arm64, ppc64)"
 
