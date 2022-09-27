@@ -37,6 +37,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
+          tags: type=schedule,pattern={{date 'YYYYMMDD'}}
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
 
       - name: Build and push
