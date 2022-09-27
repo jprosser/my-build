@@ -3,7 +3,7 @@ on:
     tags:
       - 'v*'
   schedule:
-    - cron: '*/5 16 * * *'
+    - cron: '*/5 * * * *'
 
 env:
   REGISTRY: ghcr.io
