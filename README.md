@@ -1,4 +1,4 @@
-[![CI workflow](https://img.shields.io/github/workflow/status/jprosser/my-build/ci?label=ci&logo=github&style=flat-square)](https://github.com/jprosser/my-build/actions?workflow=ci)
+![CI workflow](https://github.com/jprosser/my-build/actions/workflows/docker-image.yml/badge.svg)
 
 # my-build
 multi-arch container build test
