@@ -2,8 +2,8 @@ on:
   push:
     tags:
       - 'v*'
-  schedule:
-    - cron: '*/5 * * * *'
+#  schedule:
+#    - cron: '*/5 * * * *'
 
 env:
   REGISTRY: ghcr.io
