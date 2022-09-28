@@ -1,8 +1,8 @@
 on:
   workflow_dispatch:
     inputs:
-      tag:
-        description: 'Input tag'
+      docker_tag:
+        description: 'Docker image tag'
         required: true
         type: string
 
@@ -39,7 +39,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           tags: |
-            type=raw,enable=true,priority=200,prefix=,suffix={{date 'YYYYMMDD'}},value=${{inputs.tag}}
+            type=raw,enable=true,priority=200,prefix=,suffix={{ date 'YYYYMMDD' }},value=${{ inputs.docker_tag }}
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
 
       - name: Build and push
