@@ -2,8 +2,6 @@ on:
   push:
     tags:
       - 'v*'
-#  schedule:
-#    - cron: '*/5 * * * *'
 
 env:
   REGISTRY: ghcr.io
@@ -37,9 +35,6 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          tags: |
-            type=schedule,pattern={{date 'YYYYMMDD'}}
-            type=ref,event=tag
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
 
       - name: Build and push
