@@ -1,6 +1,9 @@
 on:
-  schedule:
-    - cron: "*/5 * * * *"
+  workflow_dispatch: 
+      tags:
+        description: 'Test scenario tags'
+        required: false 
+        type: string
 
 env:
   REGISTRY: ghcr.io
