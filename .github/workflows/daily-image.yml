@@ -1,4 +1,8 @@
+name: Daily Build
 on:
+  schedule:
+    # 1 am PST
+    - cron: '0 9 * * *'
   workflow_dispatch:
     inputs:
       docker_tag:
