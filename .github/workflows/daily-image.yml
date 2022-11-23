@@ -43,7 +43,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           tags: |
-            type=raw,enable=true,priority=200,prefix=,suffix=-{{ date 'YYYYMMDD' }},value=${{ inputs.docker_tag }}
+            type=raw,enable=true,priority=200,suffix=-{{ date 'YYYYMMDD' }},value=${{ inputs.docker_tag != '' && inputs.docker_tag || 'main' }}
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
 
       - name: Build and push
