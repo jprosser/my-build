@@ -1,0 +1,31 @@
+name: Housekeeping
+
+on:
+  schedule:
+    # 1 am PST
+    - cron: '0 9 * * *'
+  workflow_dispatch:
+    inputs:
+      docker_tag:
+        description: 'Docker image tag'
+        required: true
+        type: string
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  housekeeping:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Cleanup
+        uses: actions/delete-package-versions@v3
+        with: 
+          package-name: ${{ env.IMAGE_NAME }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          min-versions-to-keep: 7
