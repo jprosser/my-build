@@ -26,6 +26,6 @@ jobs:
       - name: Cleanup
         uses: actions/delete-package-versions@v3
         with: 
-          package-name: ${{ env.IMAGE_NAME }}
+          package-name: ${{ inputs.docker_tag != '' && inputs.docker_tag || 'my-build' }}
           token: ${{ secrets.GITHUB_TOKEN }}
           min-versions-to-keep: 7
